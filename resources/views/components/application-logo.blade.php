@@ -1,0 +1,1 @@
+<img class="w-40 h-40" src="{{ asset('staff-logo.png') }}" alt="Cadastro de Funcinários">
