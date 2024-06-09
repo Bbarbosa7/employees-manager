@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('email');
             $table->integer('phone')->unique('phone_unique');
             $table->string('address');
+            $table->string('neighborhood');
             $table->string('city')->default('São Mateus');
             $table->string('state')->default('ES');
             $table->integer('zip');
