@@ -38,9 +38,8 @@
                 </div>
                 <div class="mb-4">
                     <label class="block text-gray-700" for="phone">Telefone:</label>
-                    <input type="tel" maxlength="15" placeholder="Use somente números" name="phone" id="phone"
-                        class="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
-                        value="{{ old('phone', $employee->phone) }}">
+                    <input type="tel" maxlength="15" name="phone" id="phone" placeholder="(XX) XXXXX-XXXX" pattern="\(\d{2}\) \d{5}-\d{4}"
+                        class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" value="{{ old('phone', $employee->phone) }}">
                 </div>
                 <div class="mb-4">
                     <label class="block text-gray-700" for="salary">Salário:</label>
@@ -55,6 +54,11 @@
                         value="{{ old('address', $employee->address) }}">
                 </div>
                 <div class="mb-4">
+                    <label class="block text-gray-700" for="neighborhood">Bairro:</label>
+                    <input type="text" name="neighborhood" id="neighborhood"
+                        class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" value="{{ old('neighborhood', $employee->neighborhood) }}">
+                </div>
+                <div class="mb-4">
                     <label class="block text-gray-700" for="city">Cidade:</label>
                     <input type="text" name="city" id="city"
                         class="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
@@ -62,13 +66,13 @@
                 </div>
                 <div class="mb-4">
                     <label class="block text-gray-700" for="state">Estado:</label>
-                    <input type="text" name="state" id="state"
+                    <input type="text" name="state" id="state" placeholder="Ex.: ES" maxlength="2"
                         class="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
                         value="{{ old('state', $employee->state) }}">
                 </div>
                 <div class="mb-4">
                     <label class="block text-gray-700" for="zip">CEP:</label>
-                    <input type="text" name="zip" id="zip"
+                    <input type="text" name="zip" id="zip" maxlength="8"
                         class="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
                         value="{{ old('zip', $employee->zip) }}">
                 </div>
@@ -85,4 +89,6 @@
 
         </form>
     </div>
+    @vite('resources/js/app.js')
+    @vite('resources/js/main.js')
 @endsection
