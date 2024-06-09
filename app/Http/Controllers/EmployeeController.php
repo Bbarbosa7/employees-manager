@@ -36,7 +36,7 @@ class EmployeeController extends Controller
                 'name' => 'required',
                 'role' => 'required',
                 'salary' => 'required|numeric',
-                'phone' => 'required|numeric',
+                'phone' => 'required',
             ]
         );
 

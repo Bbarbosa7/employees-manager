@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('employee', function (Blueprint $table) {
+        Schema::create('employees', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->string('role');
@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('neighborhood');
             $table->string('city')->default('São Mateus');
             $table->string('state')->default('ES');
-            $table->integer('zip');
+            $table->string('zip');
             $table->string('country')->default('BR');
             $table->timestamps();
         });
@@ -33,6 +33,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('employee');
+        Schema::dropIfExists('employees');
     }
 };
