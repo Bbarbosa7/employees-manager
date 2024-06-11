@@ -31,6 +31,13 @@
                             <td class="px-4 py-2 border-b border-gray-200">{{ $employee->salary }}</td>
                             <td class="px-4 py-2 border-b border-gray-200">
                                 <a href="{{ route('employees.edit', $employee->id) }}" class="bg-blue-500 text-white px-4 py-2 rounded">Editar</a>
+                                
+                                <!-- Formulário para exclusão -->
+                                <form action="{{ route('employees.destroy', $employee->id) }}" method="POST" style="display:inline;">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="bg-red-500 text-white px-4 py-2 rounded">Excluir</button>
+                                </form>
                             </td>
                         </tr>
                     @endforeach
